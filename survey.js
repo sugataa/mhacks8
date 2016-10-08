@@ -30,4 +30,22 @@ var dietsurvey = new ReactSurveyModel({
 ReactDOM.render(<ReactSurvey model={survey} />, document.getElementById("surveyElement"));
 
 
-var exercisesurvey
+var exercisesurvey = new ReactSurveyModel({
+    title:"Healthy Exercise Habits", showProgressBar: "bottom", goNextPageAutomatically: true, showNavigationButtons:
+    pages: [
+	{ questions: [
+	    { type:"radiogroup", name:"jog", title:"How frequently do you jog at least 20 minutes in a day?", choices: dailyfrequencychoices}
+	]}
+	{ questions: [
+	    {type :"radiogroup", name:"pushup", title:"How frequently do you do twenty pushups more than 3 times a day?", choices: dailyfrequencychoices}
+	]}
+	{ questions: [
+	    {type :"radiogroup", name:"situp", title:"How frequently do you do thirty situps more than 3 times a day?", choices: dailyfrequencychoices}
+	]}
+	{ questions: [
+	    {type :"radiogroup", name:"squat", title:"How frequently do you do twenty five squats more than 3 times a day?", choices: dailyfrequencychoices}
+	]}
+	{ questions: [
+	    {type: "radiogroup", name"elevator", title:"How often do you use elevators?", choices:avoidancesurveychoices}
+	]}
+	{questions: 
