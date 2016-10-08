@@ -1,9 +1,0 @@
-//////////////////////////////////////////
-//Given userid corresponding to user, 
-//userEase between 1,5 with 5 being easiest 1 being failure
-//step_id
-//////////////////////////////////////////
-//DATABASE QUERIES ARE PSEUDOCODE
-//////////////////////////////////////////
-function addStepFeedback(userid,userEase,step_id) {
-    

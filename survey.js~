@@ -1,5 +1,0 @@
-var survey = new ReactSurveyModel({
-    title: "Healthy Diet Habits", showProgressBar: "bottom", goNextPageAutomatic: true, showNavigationButtons:
-    pages: [
-	{questions: [
-	    { type: "radiogroup", name: "soda",title: "How often do you drink soda?",choices: ["At least once a day","Most days","A few times a week", "About once a week", "Less than once a week"]
