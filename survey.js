@@ -71,4 +71,15 @@ var sleepsurvey = new ReactSurveyModel({
 	    {type: "radiogroup", name:"earlynight", title:"How frequently do you go to bed before midnight?", choices:dailyfrequencysurveychoices}
 	]}
 	{questions: [
-	    {type: "radiogroup", name:"
+	    {type: "radiogroup", name:"earlymorn", title:"How frequently do you wake up before 8?", choices:dailyfrequencysurveychoices}
+	]}
+	{questions: [
+	    {type: "radiogroup", name:"nap", title:"How frequently do you take naps?", choices:avoidancesurveychoices}
+	]}
+	{questions: [
+	    {type: "radiogroup", name:"screens", title:"How frequently do you use your computer or phone before bed?", choices:dailyfrequencysurveychoices}
+	]}
+    ],
+});
+
+ReactDom.render(<ReactSurvey model={survey} />, document.getElementById("surveyelement"));
