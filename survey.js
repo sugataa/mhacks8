@@ -27,7 +27,8 @@ var dietsurvey = new ReactSurveyModel({
 	]}
     ],
 });
-ReactDOM.render(<ReactSurvey model={survey} />, document.getElementById("surveyElement"));
+
+//ReactDOM.render(<ReactSurvey model={survey} />, document.getElementById("surveyElement"));
 
 
 var exercisesurvey = new ReactSurveyModel({
@@ -46,6 +47,28 @@ var exercisesurvey = new ReactSurveyModel({
 	    {type :"radiogroup", name:"squat", title:"How frequently do you do twenty five squats more than 3 times a day?", choices: dailyfrequencychoices}
 	]}
 	{ questions: [
-	    {type: "radiogroup", name"elevator", title:"How often do you use elevators?", choices:avoidancesurveychoices}
+	    {type: "radiogroup", name:"elevator", title:"How often do you use elevators?", choices:avoidancesurveychoices}
 	]}
-	{questions: 
+	{questions: [
+	    {type: "radiogroup", name:"bike", title:"How many days do you bike your longer commutes?", choices:dailyfrequencychoices}
+	]}
+	{questions: [
+	    {type: "radiogroup", name:"walk", title:"How often do you walk your shorter commutes and errands?", choices:dailyfrequencychoices}
+	]}
+	{questions: [
+	    {type: "radiogroup", name:"swim", title:"How frequently do you swim for at least twenty minutes?", choices:dailyfrequencychoices}
+	]}
+    ],
+});
+
+var sleepsurvey = new ReactSurveyModel({
+    title:"Healthy Sleep Survey", showProgressBar: "bottom", goNextPageAutomatically:true, showNavigationButtons:
+    pages: [
+	{ questions: [
+	   {type: "radiogroup", name:"caffeine", title:"How frequently do you drink caffeine after 4pm?", choices:dailyfrequencysurveychoices}
+	]}
+	{questions: [
+	    {type: "radiogroup", name:"earlynight", title:"How frequently do you go to bed before midnight?", choices:dailyfrequencysurveychoices}
+	]}
+	{questions: [
+	    {type: "radiogroup", name:"
