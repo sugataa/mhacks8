@@ -1,3 +1,0 @@
-# mhacks8
-
-Sugata
