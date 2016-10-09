@@ -32,6 +32,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   line-height: 1;
   font-family: 'Roboto', "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  background-image:url(http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/bg_pattern.gif);
   margin:20px;
   font-weight:300;
 }
@@ -364,6 +365,8 @@ body * {
 }
 
 .container {
+  background: white;
+  padding: 5%;
   margin: 20px auto;
   max-width: 400px;
   width: 100%;
