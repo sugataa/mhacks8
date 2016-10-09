@@ -39,5 +39,40 @@ function addUser(username) {
 	    maxid = 0;
 	    var userid = results.length;
 	}
-    })
-    
+    });
+    var user = new Users();
+    user.set("User_ID":userid);
+    user.set("username":username);
+
+    user.save(null, {
+	success: function(user) {
+	    alert('New object created with ID ' + user.id);
+	}
+	error: function(user) {
+	    alert('Failed to save User with ID ' + user.id);
+	}
+    });
+    return userid;
+}
+
+function updateStep(userid,stepname,ease) {
+    var Steps = Parse.Object.extend("Steps");
+    var query = new Parse.Query(Steps);
+    query.equalTo("stepname",stepname);
+    query.equalTo("User_ID",userid);
+    query.find({
+	success: function(results) {
+	    results.set("Ease", (results.Ease+ease)/2);
+	    results.set("Effectiveness", (results.Effectivness+Results.Ease)/2);
+	    results.save(null, {
+		success: function(results) {
+		    alert("Successfully updated Step with ID " + results.ID);
+		},
+		error: function(results) {
+		    alert("Could not update Step with ID " + results.ID);
+		}
+	    });
+	}
+    });
+}
+
