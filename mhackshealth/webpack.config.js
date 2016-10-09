@@ -101,7 +101,7 @@ switch(TARGET) {
       parts.setupCSS(PATHS.style),
       parts.devServer({
         // Customize host/port here if needed
-        host: 'localhost',
+        host: '0.0.0.0',
         port: 8080,
         poll: ENABLE_POLLING
       }),
