@@ -1,6 +1,8 @@
 import React as 'React'
 import Parse
 
+
+//sorts steps into an order based on distance from center of FOGG model
 function sortSteps(listofsteps) {
     var ranksteps = []
     for(var i = 0; i < listofsteps.length; i++) {
@@ -87,7 +89,7 @@ function addUser(username) {
     user.save(null, {
 	success: function(user) {
 	    alert('New object created with ID ' + user.id);
-	}
+	},
 	error: function(user) {
 	    alert('Failed to save User with ID ' + user.id);
 	}
@@ -114,7 +116,7 @@ function addUser(username) {
     sleep.save(null, {
 	success: function(results) {
 	    alert("Saved sleep object for user with" + userid);
-	}
+	},
 	error: function(results) {
 	    alert("Could not save sleep object for user with " + userid);
 	}
@@ -122,7 +124,7 @@ function addUser(username) {
     diet.save(null, {
 	success: function(results) {
 	    alert("Saved diet habit for user with " + userid);
-	}
+	},
 	error: function(results) {
 	    alert("Could not save diet habit for user with " + userid);
 	}
@@ -130,7 +132,7 @@ function addUser(username) {
     fitness.save(null, {
 	success: function(results) {
 	    alert("Saved fitness object for user with id" + userid);
-	}
+	},
 	error: function(results) {
 	    alert("Failed to save fitness object for user with id " + userid);
 	}
@@ -164,6 +166,7 @@ function generateSteps(userid) {
     var earlynight = new Steps();
     var earlymorn = new Steps();
     var nap = new Steps();
+    var screen = new Steps();
     
     //populate these objects
     soda.set("Step_Name","soda");
@@ -185,6 +188,7 @@ function generateSteps(userid) {
     earlynight.set("Step_Name","earlynight");
     earlymorn.set("Step_Name","earlymorn");
     nap.set("Step_Name","nap");
+    screen.set("Step_Name","screen");
 
     soda.set("User_ID",userid);
     iceCream.set("User_ID",userid);
@@ -205,6 +209,7 @@ function generateSteps(userid) {
     earlynight.set("User_ID",userid);
     earlymorn.set("User_ID",userid);
     nap.set("User_ID",userid);
+    screen.set("User_ID",userid);
 
     soda.set("isActive",true);
     iceCream.set("isActive",true);
@@ -225,6 +230,7 @@ function generateSteps(userid) {
     earlynight.set("isActive",true);
     earlymorn.set("isActive",true);
     nap.set("isActive",true);
+    screen.set("isActive",true);
 
     soda.set("Ease",3);
     iceCream.set("Ease",3);
@@ -245,6 +251,7 @@ function generateSteps(userid) {
     earlynight.set("Ease",3);
     earlymorn.set("Ease",3);
     nap.set("Ease",3);
+    screen.set("Ease",3);
 
     soda.set("Effectiveness",3);
     iceCream.set("Effectiveness",3);
@@ -265,6 +272,7 @@ function generateSteps(userid) {
     earlynight.set("Effectiveness",3);
     earlymorn.set("Effectiveness",3);
     nap.set("Effectiveness",3);
+    screen.set("Effectiveness",3);
 
     soda.set("Habit_Name","Diet");
     iceCream.set("Habit_Name","Diet");
@@ -285,6 +293,7 @@ function generateSteps(userid) {
     earlynight.set("Habit_Name","Sleep");
     earlymorn.set("Habit_Name","Sleep");
     nap.set("Habit_Name","Sleep");
+    screen.set("Habit_Name","Sleep");
 
     soda.set("Description","Do not drink any soda");
     iceCream.set("Description","Do not eat any ice cream");
@@ -305,6 +314,7 @@ function generateSteps(userid) {
     earlynight.set("Description","Go to bed before midnight tonight");
     earlymorn.set("Description","Wake up before 8 tomorrow");
     nap.set("Description","Do not nap at all today");
+    screen.set("Description","Do not look at screen electronics within an hour of bed");
 
     soda.save(null, {
 	success: function(soda) {
@@ -453,6 +463,14 @@ function generateSteps(userid) {
 	    alert("Saved");
 	},
 	error: function(nap) {
+	    alert("Error saving");
+	}
+    });
+    screen.save(null, {
+	success: function(screen) {
+	    alert("Saved");
+	},
+	error: function(screen) {
 	    alert("Error saving");
 	}
     });
