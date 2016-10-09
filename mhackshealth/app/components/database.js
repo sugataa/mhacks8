@@ -3,6 +3,7 @@ import Parse
 
 
 //sorts steps into an order based on distance from center of FOGG model
+//this should be used only with input, a list of steps from 
 function sortSteps(listofsteps) {
     var ranksteps = []
     for(var i = 0; i < listofsteps.length; i++) {
