@@ -5,7 +5,9 @@ import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRo
 
 import Notes from './Notes'
 import Login from './Login'
+import Habit from './Habit'
 import Registration from './Registration'
+import Step from './Step'
 
 class App extends React.Component {
   constructor(props) {
@@ -38,6 +40,8 @@ class App extends React.Component {
           </Route>
           <Route path='/about(/:name)' component={About} />
           <Route path='/survey(/:name)' component={Survey} />
+          <Route path='/habit(/:name)' component={Habit} />
+          <Route path='/step/:name' component={Step} />
           <Route path='/namedComponent' component={NamedComponents}>
             <IndexRoute components={{ title: Title, subTitle: SubTitle }} />
           </Route>

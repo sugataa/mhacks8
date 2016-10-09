@@ -18,9 +18,6 @@ export default () => (
       <div className="password_bgfield">
         <input type="text" className="textfield" placeholder="Password" />
       </div>
-      <div className="scode_bgfield">
-        <input type="text" className="textfield" placeholder="SecureID" />
-      </div>
       <Link activeClassName='active' to='/survey'><div style={divStyle} className="login_button_big toggle_btn" id="trigger">Log In</div></Link>
     </div>
   </div>
