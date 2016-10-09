@@ -28,6 +28,19 @@ function sortSteps(listofsteps) {
     return ranksteps;
 }
 
+function getDescription(step_name){
+    var Steps = Parse.Object.extend("Steps");
+    var query = new Parse.Query(Users);
+    query.equalto("Step_Name",step_name);
+    query.find({
+	success: function(results) {
+	    alert("Found correct step");
+	    var desc = results.Description;
+	}
+    });
+    return desc;
+}
+
 function getUser(userid) {
     var Users = Parse.Object.extend("Users");
     var query = new Parse.Query(Users);
