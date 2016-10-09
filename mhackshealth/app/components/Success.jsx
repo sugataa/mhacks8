@@ -8,7 +8,7 @@ var Success = React.createClass({
         <h2>Thanks for registering {this.props.fieldValues.name}!</h2>
       <ul className="form-fields">
         <li className="form-footer">
-          <Link activeClassName='active' to='/'><div className="login_button_big toggle_btn" id="trigger">Get started!</div></Link>
+          <Link activeClassName='active' to='/habit'><div className="login_button_big toggle_btn" id="trigger">Get started!</div></Link>
         </li>
       </ul>
       </div>
