@@ -498,10 +498,12 @@ function updateStep(userid,stepname,ease) {
     var query = new Parse.Query(Steps);
     query.equalTo("stepname",stepname);
     query.equalTo("User_ID",userid);
+    predEase = predictiveParam("Ease",stepname);
+    predEff = predictiveParam("Effectiveness",stepname);
     query.find({
 	success: function(results) {
-	    results.set("Ease", (results.Ease+ease)/2);
-	    results.set("Effectiveness", (results.Effectivness+Results.Ease)/2);
+	    results.set("Ease", (1/(2*predEase[0]))*(results.Ease+ease)/2+predEase[1]);
+	    results.set("Effectiveness", ((1/(2*predEff[0]))*results.Effectivness+Results.Ease)/2 + predEff[1] + (predEase[1])/(fact(predEase[0])));
 	    results.save(null, {
 		success: function(results) {
 		    alert("Successfully updated Step with ID " + results.ID);
@@ -514,3 +516,35 @@ function updateStep(userid,stepname,ease) {
     });
 }
 
+function fact(number) {
+    if(number===0) {
+	return 1;
+    }
+    n = Math.floor(number);
+    return n*fact(n-1);
+}
+
+//given ease or effectiveness, iterates over entire data set and calculates a
+//weighting coefficient
+function predictiveParam(param, stepname){
+    var Steps = Parse.Object.extends("Steps");
+    var query = new Parse.Query(Steps);
+    
+    var siz = 0;
+    var scal = 0;
+    
+    query.equalTo("Step_Name",stepname);
+
+    query.find({
+	success: function(results) {
+	    alert("Found " + results.length + " results to incorporate into scaling");
+	    siz = results.length;
+	    var sum = 0;
+	    for(var i = 0; i<siz; i++) {
+		sum +=results.param;
+	    }
+	    scal = sum/siz;
+	}
+    });
+    return [siz,scal];
+}
