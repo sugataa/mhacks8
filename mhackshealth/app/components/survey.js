@@ -80,6 +80,47 @@ var sleepsurvey = new ReactSurveyModel({
 	    {type: "radiogroup", name:"screens", title:"How frequently do you use your computer or phone before bed?", choices:dailyfrequencysurveychoices}
 	]}
     ],
+
+    //now add data from survey to database using addStepEase
+    
 });
 
 ReactDom.render(<ReactSurvey model={survey} />, document.getElementById("surveyelement"));
+
+function addStepEase(surveyout, stepname, userid) {
+    //var Steps = Parse.Object.extends(key);
+    //var step = new Steps();
+    //var query = new
+    //query.equalTo("User_ID",userid);
+    //var i = 0;
+    //for (var key in dailyfrequencysurveychoices) {
+    //    if(surveyout === key) {
+    //        var ret = 5 - i;
+    //    }
+    //    i = i + 1;
+    //}
+    //i = 0;
+    //for (var key in avoidancesurveychoices) {
+    //    if(surveyout === key) {
+    //        var ret = i;
+    //    }
+    //    i = i + 1;
+    //}
+    //query.equalTo("Step_Name",stepname);
+    //query.find({
+    //    success: function(results) {
+    //        alert("adding new data to step")
+    //        results.set("Ease",ret);
+    //        results.save(null, {
+    //            success: function(results) {
+    //                alert("Saved successfully");
+    //            },
+    //            error: function(results) {
+    //                alert("Unable to save successfully");
+    //            }
+    //         });
+    //    }
+    //});
+    //
+    return 0;
+}
