@@ -11,9 +11,9 @@ export default () => (
       <div id="logo"><img src="http://dev.mundomediainc.com/design/brendan/projects/Mogenio/images/login_logo.png" /></div>
     </div>
     <div className="white_box">
-      <Link><div style={divStyle} className="login_button_big toggle_btn" id="trigger"><a href="http://tympanus.net/Development/DragDropInteractions/modal.html">Nutrition</a></div></Link>
-      <Link><div style={divStyle} className="login_button_big toggle_btn" id="trigger"><a href="http://tympanus.net/Development/DragDropInteractions/modal.html">Exercise</a></div></Link>
-      <Link><div style={divStyle} className="login_button_big toggle_btn" id="trigger"><a href="http://tympanus.net/Development/DragDropInteractions/modal.html">Sleep</a></div></Link>
+      <Link><div style={divStyle} className="login_button_big toggle_btn" id="trigger"><a href="https://sugataa.github.io/dragndrop/">Nutrition</a></div></Link>
+      <Link><div style={divStyle} className="login_button_big toggle_btn" id="trigger"><a href="https://sugataa.github.io/dragndrop/">Exercise</a></div></Link>
+      <Link><div style={divStyle} className="login_button_big toggle_btn" id="trigger"><a href="https://sugataa.github.io/dragndrop/">Sleep</a></div></Link>
     </div>
   </div>
 )
