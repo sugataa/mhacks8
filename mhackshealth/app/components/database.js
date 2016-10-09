@@ -1,6 +1,19 @@
 import React as 'React'
 import Parse
 
+function getDescription(step_name){
+    var Steps = Parse.Object.extend("Steps");
+    var query = new Parse.Query(Users);
+    query.equalto("Step_Name",step_name);
+    query.find({
+	success: function(results) {
+	    alert("Found correct step");
+	    var desc = results.Description;
+	}
+    });
+    return desc;
+}
+
 function sortSteps(listofsteps) {
     var ranksteps = []
     for(var i = 0; i < listofsteps.length; i++) {
